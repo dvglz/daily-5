@@ -1,0 +1,18 @@
+Original prompt: hello, i want to add some changes to project, i want phase 2 (when you made your picks and supposed to select cards for parlay) be more interactive and you free form draw on 3 cards to include them
+
+- 2026-03-24: Inspected the React/Vite project and found phase 2 already supports per-card scribbles, but only within a single card at a time.
+- 2026-03-24: Implementing a broader free-draw interaction so one marker stroke can travel across multiple parlay cards and include up to three of them.
+- 2026-03-24: `npm run build` passes after the phase-2 interaction rewrite and style updates.
+- 2026-03-24: Attempted Playwright verification, but local Chromium execution outside the sandbox was rejected, so live browser validation is still pending.
+- 2026-03-24: Reinstalled `web-haptics@0.0.6` and rewired the app to use an explicit `WebHaptics` instance with a `navigator.vibrate` fallback.
+- 2026-03-24: Restyled phase 1 and phase 2 around centered portrait cards; removed the accent glow treatment from the phase-2 cards and lock button.
+- 2026-03-24: `npm run build` still passes after the haptics and layout updates.
+- 2026-03-24: Reworked phase 2 into a scattered five-card layout closer to the reference; cards can now be marked by tap or by drawing across them, and selected cards get numbered sticker badges.
+- 2026-03-24: Updated parlay copy to explicitly say “Mark 3 cards for your parlay”.
+- 2026-03-24: Reduced phase-2 card typography and loosened the scattered layout to reduce overlap; added a subtle stage background under the card cluster.
+- 2026-03-24: Optimized phase 2 for the phone viewport by shrinking header chrome, tightening the count/rules area, shortening the board, and scaling cards/buttons down so more of the interaction fits on screen.
+- 2026-03-24: Added explicit phase-2 haptic ticks while drawing across cards and replaced the unclear `Leg` badge with a clearer `Parlay` sticker label.
+- 2026-03-24: Removed the extra market/subline copy from phase 1 cards, moved the phase-2 rules block to the bottom, and simplified the parlay copy to the two core messages.
+- 2026-03-24: Removed the redundant phase-2 count block, moved progress into the CTA, rewrote the rules as direct scoring copy, made marked cards solid, and enlarged/recentered the card board vertically.
+- 2026-03-24: Marked phase-2 cards now promote above the base stack so selections from the back are not hidden behind unmarked cards.
+- 2026-03-24: Wired the new images from `public/` into the card data model and switched phase 1 and phase 2 avatars to render real images with the old initials as fallback.
