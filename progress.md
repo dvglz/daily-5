@@ -20,3 +20,5 @@ Original prompt: hello, i want to add some changes to project, i want phase 2 (w
 - 2026-03-24: Tightened the phase-2 mobile layout by shrinking header/footer chrome, moving phase-2 pick labels into a row, and reducing the board/card footprint for short phone viewports.
 - 2026-03-24: Reworked the haptics hook to stop blindly preferring `web-haptics`; it now tries Telegram native haptics first, then real vibration support, which avoids the old silent no-op path on unsupported browsers.
 - 2026-03-24: Nudged phase-2 cards 04 and 05 inward so the lower pair sits closer together on desktop and mobile layouts.
+- 2026-03-24: Restored vertical centering for the mobile phase-2 card board by removing the top-aligned mobile override.
+- 2026-03-24: Slightly enlarged the phase-2 cards and nudged the phase-1 avatar block closer to the visual center with a modest avatar size increase and tighter body spacing.

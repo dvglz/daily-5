@@ -112,7 +112,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   width: min(100%, 320px);
   aspect-ratio: 0.68;
   padding: 26px 22px;
@@ -153,8 +153,8 @@ body {
 }
 
 .card-row__avatar {
-  width: 96px;
-  height: 96px;
+  width: 102px;
+  height: 102px;
   border-radius: 50%;
   flex-shrink: 0;
   display: flex;
@@ -179,9 +179,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  flex: 1;
+  flex: 0 1 auto;
 }
 
 .card-row__market {
@@ -405,14 +405,14 @@ body {
   background: #161619;
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 16px 12px;
+  padding: 17px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
   position: absolute;
-  width: clamp(108px, 31vw, 146px);
+  width: clamp(112px, 32vw, 150px);
   aspect-ratio: 0.68;
   cursor: grab;
   touch-action: none;
@@ -445,8 +445,8 @@ body {
 }
 
 .v-card__avatar {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -498,7 +498,7 @@ body {
 }
 
 .v-card__headline {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
@@ -763,7 +763,7 @@ body {
   }
 
   .parlay-pool-area {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .scribble-stack {
@@ -796,20 +796,20 @@ body {
   }
 
   .v-card {
-    width: 112px;
-    padding: 14px 10px;
+    width: 116px;
+    padding: 15px 10px;
     gap: 5px;
     border-radius: 20px;
   }
 
   .v-card__avatar {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
   }
 
   .v-card__headline {
-    font-size: 11px;
-    max-width: 122px;
+    font-size: 11.5px;
+    max-width: 126px;
   }
 
   .v-card__options {
