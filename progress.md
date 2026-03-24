@@ -22,3 +22,7 @@ Original prompt: hello, i want to add some changes to project, i want phase 2 (w
 - 2026-03-24: Nudged phase-2 cards 04 and 05 inward so the lower pair sits closer together on desktop and mobile layouts.
 - 2026-03-24: Restored vertical centering for the mobile phase-2 card board by removing the top-aligned mobile override.
 - 2026-03-24: Slightly enlarged the phase-2 cards and nudged the phase-1 avatar block closer to the visual center with a modest avatar size increase and tighter body spacing.
+- 2026-03-24: Re-ran `npm install web-haptics@0.0.6` to refresh the local dependency and verified the app still builds.
+- 2026-03-24: Verified the built app in a real mobile Playwright run: completed all 5 phase-1 picks, marked 3 phase-2 cards, locked the parlay, and saw no console or page errors.
+- 2026-03-24: Replaced the custom haptics hook with a direct `useWebHaptics` integration from `web-haptics/react`, removing the Telegram/native bridge logic.
+- 2026-03-24: Added throttled live haptic ticks during phase-2 drawing, so the marker motion itself now pulses in addition to the existing card-entry haptics.

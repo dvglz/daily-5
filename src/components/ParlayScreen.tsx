@@ -35,6 +35,7 @@ interface ActiveDraw {
 const MIN_SCRIBBLE_DIST = 30
 const CARD_HIT_PADDING = 18
 const CARD_PATH_PADDING = 12
+const DRAW_HAPTIC_INTERVAL_MS = 110
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max)
@@ -135,6 +136,7 @@ export function ParlayScreen({ picks, onLock }: ParlayScreenProps) {
   } | null>(null)
 
   const activeDrawRef = useRef<ActiveDraw | null>(null)
+  const lastDrawHapticAtRef = useRef(0)
   const stackRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({})
   const haptics = useHaptics()
@@ -224,6 +226,7 @@ export function ParlayScreen({ picks, onLock }: ParlayScreenProps) {
       points: [point],
       touchedCardIds: [pick.card.id],
     }
+    lastDrawHapticAtRef.current = Date.now()
 
     syncDrawingState(activeDrawRef.current)
     try {
@@ -243,6 +246,12 @@ export function ParlayScreen({ picks, onLock }: ParlayScreenProps) {
     if (!point) return
     active.points.push(point)
 
+    const now = Date.now()
+    if (now - lastDrawHapticAtRef.current >= DRAW_HAPTIC_INTERVAL_MS) {
+      haptics.trace()
+      lastDrawHapticAtRef.current = now
+    }
+
     const boundsByCard = getCardBounds()
     for (const pick of picks) {
       const bounds = boundsByCard[pick.card.id]
@@ -258,6 +267,7 @@ export function ParlayScreen({ picks, onLock }: ParlayScreenProps) {
 
   function clearActiveDraw() {
     activeDrawRef.current = null
+    lastDrawHapticAtRef.current = 0
     setDrawingState(null)
   }
 
