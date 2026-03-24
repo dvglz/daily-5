@@ -16,3 +16,7 @@ Original prompt: hello, i want to add some changes to project, i want phase 2 (w
 - 2026-03-24: Removed the redundant phase-2 count block, moved progress into the CTA, rewrote the rules as direct scoring copy, made marked cards solid, and enlarged/recentered the card board vertically.
 - 2026-03-24: Marked phase-2 cards now promote above the base stack so selections from the back are not hidden behind unmarked cards.
 - 2026-03-24: Wired the new images from `public/` into the card data model and switched phase 1 and phase 2 avatars to render real images with the old initials as fallback.
+- 2026-03-24: Removed phase-2 muted styling for non-parlay cards, enlarged phase-1 avatars, and restored the phase-1 market tag without bringing market labels back to phase 2.
+- 2026-03-24: Tightened the phase-2 mobile layout by shrinking header/footer chrome, moving phase-2 pick labels into a row, and reducing the board/card footprint for short phone viewports.
+- 2026-03-24: Reworked the haptics hook to stop blindly preferring `web-haptics`; it now tries Telegram native haptics first, then real vibration support, which avoids the old silent no-op path on unsupported browsers.
+- 2026-03-24: Nudged phase-2 cards 04 and 05 inward so the lower pair sits closer together on desktop and mobile layouts.

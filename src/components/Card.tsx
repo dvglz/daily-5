@@ -29,6 +29,7 @@ export function Card({ card, stackIndex, isDismissing, onPick }: CardProps) {
   const [picked, setPicked] = useState<'A' | 'B' | null>(null)
   const haptics = useHaptics()
   const isActive = stackIndex === 0
+  const marketTag = card.marketType === 'player-prop' ? 'player prop' : card.marketType
 
   function handlePick(option: 'A' | 'B') {
     if (picked || !isActive) return
@@ -50,6 +51,7 @@ export function Card({ card, stackIndex, isDismissing, onPick }: CardProps) {
         )}
       </div>
       <div className="card-row__body">
+        <span className="card-row__market">{marketTag}</span>
         <p className="card-row__headline">{card.headline}</p>
         <div className="card-row__options">
           <OptionLabel label={card.optionA} picked={picked === 'A'} faded={picked === 'B'} onPick={() => handlePick('A')} />
